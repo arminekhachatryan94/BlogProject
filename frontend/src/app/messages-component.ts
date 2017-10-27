@@ -15,4 +15,6 @@ import { WebService } from './web.service';
 })
 export class MessagesComponent {
     constructor(private webService: WebService) {}
+
+    messages = [];
 }
