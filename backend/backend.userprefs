@@ -1,5 +1,10 @@
-﻿<Properties StartupConfiguration="{8FDA9CFD-8B74-48AF-8376-68E5534AAA9C}|Default">
-  <MonoDevelop.Ide.Workbench />
+﻿<Properties StartupConfiguration="{233A3CFF-7B1A-4379-BBAD-3127BFEEE9A2}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="backend/Startup.cs">
+    <Files>
+      <File FileName="backend/Controllers/MessagesController.cs" Line="8" Column="26" />
+      <File FileName="backend/Startup.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
