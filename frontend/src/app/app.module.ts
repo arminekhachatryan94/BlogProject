@@ -10,28 +10,22 @@ import {
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
-import { MessagesComponent } from './messages-component';
-import { NewMessageComponent } from './new-message.component';
-import { WebService } from './web.service';
-import { HttpModule } from '@angular/http';
-import { FormsModule } from '@angular/forms';
+import { MessagesComponent } from './messages.component';
 
 @NgModule({
   declarations: [
-    AppComponent, MessagesComponent, NewMessageComponent
+    AppComponent, MessagesComponent
   ],
   imports: [
     BrowserModule,
-    HttpModule,
     BrowserAnimationsModule,
     MatButtonModule,
     MatCardModule,
     MatInputModule,
     MatSnackBarModule,
-    MatToolbarModule,
-    FormsModule
+    MatToolbarModule
   ],
-  providers: [WebService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
