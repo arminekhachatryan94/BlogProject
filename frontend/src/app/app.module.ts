@@ -14,6 +14,8 @@ import { MessagesComponent } from './messages.component';
 import { WebService } from './web.service';
 import { HttpModule } from '@angular/http';
 import { NewMessageComponent } from './new-message.component';
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent, MessagesComponent, NewMessageComponent
@@ -26,7 +28,8 @@ import { NewMessageComponent } from './new-message.component';
     MatInputModule,
     MatSnackBarModule,
     MatToolbarModule,
-    HttpModule
+    HttpModule,
+    FormsModule
   ],
   providers: [ WebService ],
   bootstrap: [ AppComponent ]
