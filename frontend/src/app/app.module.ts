@@ -25,7 +25,11 @@ var routes = [
   component: HomeComponent
 },
 {
-  path: 'messages',
+  path: 'messages/',
+  component: MessagesComponent
+},
+{
+  path: 'messages/:name',
   component: MessagesComponent
 }];
 
