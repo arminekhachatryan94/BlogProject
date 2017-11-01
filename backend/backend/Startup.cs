@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.EntityFrameworkCore;
 
 namespace backend
 {
@@ -23,6 +24,9 @@ namespace backend
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<ApiContext>(opt => opt.UseInMemoryDatabase());
+
+
             services.AddCors(options => options.AddPolicy("Cors",
                                                           builder =>
             {
@@ -45,6 +49,23 @@ namespace backend
             app.UseCors("Cors");
 
             app.UseMvc();
+
+            SeeData(app.ApplicationServices.GetService<ApiContext>());
+        }
+
+        public void SeeData(ApiContext context) {
+            context.messages.Add(new Models.Message
+            {
+                Owner = "John",
+                Text = "hello"
+            });
+            context.messages.Add(new Models.Message
+            {
+                Owner = "Tim",
+                Text = "Hi"
+            });
+
+            context.SaveChanges();
         }
     }
 }

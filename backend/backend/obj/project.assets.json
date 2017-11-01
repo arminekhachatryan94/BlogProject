@@ -28520,6 +28520,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
       "Microsoft.AspNetCore.All >= 2.0.0",
+      "Microsoft.EntityFrameworkCore.InMemory >= 2.0.0",
       "Microsoft.NETCore.App >= 2.0.0",
       "System.IdentityModel.Tokens.Jwt >= 5.1.4"
     ]
@@ -28572,6 +28573,10 @@
           "System.IdentityModel.Tokens.Jwt": {
             "target": "Package",
             "version": "5.1.4"
+          },
+          "Microsoft.EntityFrameworkCore.InMemory": {
+            "target": "Package",
+            "version": "2.0.0"
           }
         },
         "imports": [
