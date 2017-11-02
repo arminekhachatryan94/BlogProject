@@ -1,11 +1,7 @@
 ﻿<Properties StartupConfiguration="{F4859FE4-43B3-42B9-BDA0-F2A6E08C992C}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="backend/Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="backend/Controllers/AuthController.cs">
     <Files>
-      <File FileName="backend/ApiContext.cs" Line="13" Column="39" />
-      <File FileName="backend/Startup.cs" Line="51" Column="26" />
-      <File FileName="backend/Controllers/MessagesController.cs" Line="25" Column="18" />
-      <File FileName="backend/Models/Message.cs" Line="10" Column="38" />
-      <File FileName="backend/Program.cs" Line="21" Column="1" />
+      <File FileName="backend/Controllers/AuthController.cs" Line="12" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

@@ -12,5 +12,6 @@ namespace backend
 
         public DbSet<Models.Message> messages { get; set; }
 
+        public DbSet<Models.User> users { get; set; }
     }
 }
