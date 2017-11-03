@@ -13,6 +13,7 @@ namespace backend.Controllers
     public class JwtPacket
     {
         public string Token { get; set; }
+        public string FirstName { get; set; }
     }
 
     [Produces("application/json")]
@@ -34,8 +35,11 @@ namespace backend.Controllers
             context.users.Add(user);
             context.SaveChanges();
 
-            return new JwtPacket() { Token = encodedJwt };
-
+            return new JwtPacket() {
+                Token = encodedJwt,
+                FirstName = user.FirstName
+            };
+ 
         }
     }
 }
