@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -52,7 +53,13 @@ namespace backend.Controllers
         }
 
         JwtPacket CreateJwtPacket(Models.User user) {
-            var jwt = new JwtSecurityToken();
+
+            var claims = new Claim[] {
+                new Claim(JwtRegisteredClaimNames.Sub, user.Id)
+            };
+
+            var jwt = new JwtSecurityToken(claims);
+
             var encodedJwt = new JwtSecurityTokenHandler().WriteToken(jwt);
 
             return new JwtPacket()
