@@ -26,6 +26,10 @@ export class NewMessageComponent {
     };
 
     post() {
-        this.webService.postMessage(this.message);
+        if( this.message.text != "" ){
+            this.webService.postMessage(this.message);
+        }
+        this.message.text = "";
+
     }
 }
