@@ -10,6 +10,11 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace backend.Controllers
 {
+    public class EditProfileData {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+    }
+
     [Produces("application/json")]
     [Route("api/Users")]
     public class UsersController : Controller
@@ -35,9 +40,26 @@ namespace backend.Controllers
         [Authorize]
         [HttpGet("me")]
         public ActionResult Get() {
-            var id = HttpContext.User.Claims.First().Value;
+            return Ok(GetSecureUser());
+        }
 
-            return Ok(context.users.SingleOrDefault(u => u.Id == id));
+        [Authorize]
+        [HttpPost("me")]
+        public ActionResult Post([FromBody] EditProfileData profileData)
+        {
+            var user = GetSecureUser();
+
+            user.FirstName = profileData.FirstName ?? user.FirstName;
+            user.LastName = profileData.LastName ?? user.LastName;
+
+            context.SaveChanges();
+
+            return Ok(user);
+        }
+
+        Models.User GetSecureUser() {
+            var id = HttpContext.User.Claims.First().Value;
+            return context.users.SingleOrDefault(u => u.Id == id);
         }
     }
 }

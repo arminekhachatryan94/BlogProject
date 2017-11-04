@@ -91,7 +91,7 @@ namespace backend
                 Text = "Hi"
             });
 
-            context.users.Add( new Models.User{ Email = "a", FirstName = "Tim", Password = "a" } );
+            context.users.Add( new Models.User{ Email = "a", FirstName = "Tim", Password = "a", Id = "1" } );
 
             context.SaveChanges();
         }
