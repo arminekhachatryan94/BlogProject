@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -54,11 +56,13 @@ namespace backend.Controllers
 
         JwtPacket CreateJwtPacket(Models.User user) {
 
+            var signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("this is the secret phrase"));
+            var signingCredentials = new SigningCredentials(signingKey, SecurityAlgorithms.HmacSha256);
             var claims = new Claim[] {
                 new Claim(JwtRegisteredClaimNames.Sub, user.Id)
             };
 
-            var jwt = new JwtSecurityToken(claims);
+            var jwt = new JwtSecurityToken(claims: claims, signingCredentials: signingCredentials);
 
             var encodedJwt = new JwtSecurityTokenHandler().WriteToken(jwt);
 
