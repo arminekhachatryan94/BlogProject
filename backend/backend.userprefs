@@ -1,16 +1,12 @@
 ﻿<Properties StartupConfiguration="{F4859FE4-43B3-42B9-BDA0-F2A6E08C992C}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="backend/Controllers/AuthController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="backend/Controllers/UsersController.cs">
     <Files>
-      <File FileName="backend/Controllers/UsersController.cs" Line="29" Column="34" />
-      <File FileName="backend/Startup.cs" Line="71" Column="1" />
-      <File FileName="backend/Controllers/AuthController.cs" Line="42" Column="46" />
+      <File FileName="backend/Controllers/UsersController.cs" Line="38" Column="33" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/arminekhachatryan/Desktop/BlogProject/backend/backend/Startup.cs" relfile="backend/Startup.cs" line="71" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />

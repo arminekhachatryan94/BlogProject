@@ -35,7 +35,9 @@ namespace backend.Controllers
         [Authorize]
         [HttpGet("me")]
         public ActionResult Get() {
-            return Ok("secure");
+            var id = HttpContext.User.Claims.First().Value;
+
+            return Ok(context.users.SingleOrDefault(u => u.Id == id));
         }
     }
 }
